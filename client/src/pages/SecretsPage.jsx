@@ -28,11 +28,11 @@ export default function SecretsPage(props) {
 
   async function name(params) {}
 
-  // useEffect(() => {
-  //   setSecret(location.state?.userDetails.secret || null);
-  //   console.log("The secret received in new page is:");
-  //   console.log(mySecret);
-  // }, [location.state?.userData?.secret]);
+  useEffect(() => {
+    setSecret(location.state?.userDetails.secret || null);
+    console.log("The secret received in new page is:");
+    console.log(mySecret);
+  }, [location.state?.userData?.secret]);
 
   return (
     <>

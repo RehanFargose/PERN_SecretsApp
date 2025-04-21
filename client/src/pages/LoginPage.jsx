@@ -56,6 +56,9 @@ export default function LoginPage(props) {
       // const userSecret = userData.secret;
       // console.log(userSecret);
 
+      // Get the message sent back from server, to be used as alerts/notifications
+      const message = response.data.message;
+
       // Clear the input fields
       setLogin({
         username: "",
@@ -64,14 +67,17 @@ export default function LoginPage(props) {
 
       // Navigate to certain pages based on returned boolean variable
       if (loginStatus) {
+        alert(message);
         // Redirect to secrets page
         navigate("/secrets", { state: { userDetails: userData } });
       } else {
-        alert("Login failed! Please check your credentials.");
+        // alert("Login failed! Please check your credentials.");
+        alert(message);
         console.log("Redirecting to Login Page");
         navigate("/login");
       }
     } catch (error) {
+      alert(message);
       console.error("Unexpected error:", error.message);
     }
   }

@@ -46,6 +46,9 @@ export default function RegisterPage(props) {
       // Get the user Account details, passed when navigating
       const userData = response.data.userData;
 
+      // Get the message sent back from server, to be used as alerts/notifications
+      const message = response.data.message;
+
       // Clear the input fields
       setNewAccount({
         username: "",
@@ -54,10 +57,12 @@ export default function RegisterPage(props) {
 
       // Navigation condition
       if (regStatus) {
+        alert(message);
         // Pass the user details to the secrets page
         navigate("/secrets", { state: { userDetails: userData } });
       } else {
-        alert("Registration failed, Email already exists!");
+        // alert("Registration failed, Email already exists!");
+        alert(message);
         navigate("/register");
       }
     } catch (error) {
