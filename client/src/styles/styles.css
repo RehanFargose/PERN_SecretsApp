@@ -1,15 +1,36 @@
 /* Make the full layout stretch to fill screen */
 .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Optional: Add this if you want your content to push footer down */
-  .jumbotron.centered {
-    flex: 1;
-  }
-  
-  .content-wrapper {
-    flex: 1; /* This pushes the footer to the bottom */
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Optional: Add this if you want your content to push footer down */
+.jumbotron.centered {
+  flex: 1;
+}
+
+.content-wrapper {
+  flex: 1; /* This pushes the footer to the bottom */
+}
+
+/* TO make sure footer stays at the bottom */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.jumbotron {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}

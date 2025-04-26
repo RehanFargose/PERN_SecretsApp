@@ -87,52 +87,53 @@ export default function LoginPage(props) {
       <div className="page-container">
         <Header />
 
-        <div className="container mt-5">
-          <h1>Login</h1>
+        <div className="content-wrapper">
+          <div className="container mt-5">
+            <h1>Login</h1>
 
-          <div className="row">
-            <div className="col-sm-8">
-              <div className="card">
-                <div className="card-body">
-                  {/* <!-- Makes POST request to /login route --> */}
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        value={loginInfo.username}
-                        onChange={handleChange}
-                        name="username"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="password">Password</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        value={loginInfo.password}
-                        onChange={handleChange}
-                        name="password"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn btn-dark"
-                      onClick={(event) => {
-                        event.preventDefault();
+            <div className="row">
+              <div className="col-sm-8">
+                <div className="card">
+                  <div className="card-body">
+                    {/* <!-- Makes POST request to /login route --> */}
+                    <form>
+                      <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          value={loginInfo.username}
+                          onChange={handleChange}
+                          name="username"
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                          type="password"
+                          className="form-control"
+                          value={loginInfo.password}
+                          onChange={handleChange}
+                          name="password"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="btn btn-dark"
+                        onClick={(event) => {
+                          event.preventDefault();
 
-                        sendLoginDetails();
-                      }}
-                    >
-                      Login
-                    </button>
-                  </form>
+                          sendLoginDetails();
+                        }}
+                      >
+                        Login
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* <!-- <div className="col-sm-4">
+              {/* <!-- <div className="col-sm-4">
                 <div className="card">
                     <div className="card-body">
                     <a className="btn btn-block" href="/auth/google" role="button">
@@ -142,9 +143,9 @@ export default function LoginPage(props) {
                     </div>
                 </div>
                 </div> --> */}
+            </div>
           </div>
         </div>
-
         <Footer />
       </div>
     </>

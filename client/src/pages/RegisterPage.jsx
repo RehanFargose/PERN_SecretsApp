@@ -75,52 +75,53 @@ export default function RegisterPage(props) {
       <div className="page-container">
         <Header />
 
-        <div className="container mt-5">
-          <h1>Register</h1>
+        <div className="content-wrapper">
+          <div className="container mt-5">
+            <h1>Register</h1>
 
-          <div className="row">
-            <div className="col-sm-8">
-              <div className="card">
-                <div className="card-body">
-                  {/* <!-- Makes POST request to /register route --> */}
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        name="username"
-                        value={newAccount.username}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="password">Password</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        name="password"
-                        value={newAccount.password}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn btn-dark"
-                      onClick={(event) => {
-                        event.preventDefault();
+            <div className="row">
+              <div className="col-sm-8">
+                <div className="card">
+                  <div className="card-body">
+                    {/* <!-- Makes POST request to /register route --> */}
+                    <form>
+                      <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          name="username"
+                          value={newAccount.username}
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                          type="password"
+                          className="form-control"
+                          name="password"
+                          value={newAccount.password}
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="btn btn-dark"
+                        onClick={(event) => {
+                          event.preventDefault();
 
-                        registerUser();
-                      }}
-                    >
-                      Register
-                    </button>
-                  </form>
+                          registerUser();
+                        }}
+                      >
+                        Register
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* <!-- <div className="col-sm-4">
+              {/* <!-- <div className="col-sm-4">
                 <div className="card social-block">
                     <div className="card-body">
                     <a className="btn btn-block" href="/auth/google" role="button">
@@ -130,6 +131,7 @@ export default function RegisterPage(props) {
                     </div>
                 </div>
                 </div> --> */}
+            </div>
           </div>
         </div>
 

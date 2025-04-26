@@ -1,7 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Header(props) {
+  // To navigate via react router
+  const navigate = useNavigate();
+
+  // Function to logout/deserialize user from the session
+  async function userLogout(event) {
+    alert("Trying to Log out the user!");
+    navigate("/");
+    console.log("User Logged Out!");
+  }
+
   return (
     <>
       <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -28,11 +40,6 @@ export default function Header(props) {
           </li>
           <li className="nav-item">
             <Link to="/" className="nav-link">
-              Pricing
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
               FAQs
             </Link>
           </li>
@@ -41,6 +48,37 @@ export default function Header(props) {
               About
             </Link>
           </li>
+
+          {/* {props.loginStatus ? (
+            <>
+              <li className="nav-item">
+                <button type="button" className="btn btn-danger">
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : null} */}
+
+          {/* Display Logout button only when you are on secrets page */}
+          {props.loginStatus && (
+            <>
+              <li className="nav-item">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={(event) => {
+                    // To prevent page refresh and erroneous behaviour
+                    event.preventDefault();
+
+                    // Logout user and send back to home page
+                    userLogout();
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
         </ul>
       </header>
     </>
